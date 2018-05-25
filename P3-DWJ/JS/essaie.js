@@ -1,0 +1,2 @@
+/*marqueur */
+			icon: iconMarker  
