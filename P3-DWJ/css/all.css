@@ -95,10 +95,10 @@ section {
     left: 43%;
 
 }
-.bouton_reservation button, .bouton_confirmation button{
+button{
     padding: 10px;
 }
-.canvas{
+#canvas{
     width: 250px;
     max-width: 95%;
     height: 150px;
@@ -106,6 +106,7 @@ section {
     background-color:burlywood;
     margin: auto;
     display: block;
+    margin-bottom: 10px;
 }
 .reserver{
     position: relative;
@@ -131,8 +132,17 @@ section {
     padding: 10px;
     box-sizing: border-box;
 }
-.formulaire, .canvas , #book-btn{
+.formulaire{
 	display: none;
+}
+
+.reservation-actions{
+    display: flex;
+    justify-content: center;
+}
+
+.reservation-actions > button:first-child{
+    margin-right: 4px;
 }
 
 

@@ -5,7 +5,7 @@ class GoogleMap {
     this.initEvents();
   }
 
-  initEvents(){
+  initEvents() {
     const reserverButton = document.querySelector('#book-btn');
     reserverButton.addEventListener('click', () => {
       new ReservationStatus(this.station);
@@ -20,23 +20,12 @@ class GoogleMap {
           const marker = new google.maps.Marker({
             map: this.map,
             position: station.position,
-			/*const iconMarker = {
-			  url: "image/marker-vert.png";
-			  
-			  	  		
-		if (station.available_bikes === 0) {
-        iconMarker.url = "image/marker-orange.png";
-      } 
-		else if (station.status === "CLOSE") {
-        iconMarker.url = "image/marker-rouge.png";
-      }
-	  }
-	  */
-			 
+            icon: `http://maps.google.com/mapfiles/ms/icons/${this.getMarkerColor(station)}.png`
+
           });
           this.createMarkerListener(marker, station);
           return marker;
-        });	
+        });
         new MarkerClusterer(this.map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }, function (err) {
         console.log(err)
@@ -44,52 +33,51 @@ class GoogleMap {
 
   }
 
+  getMarkerColor(station) {
+    if (station.status === "CLOSED") {
+      return 'red-dot';
+    }
+    if (station.available_bikes === 0) {
+      return 'yellow-dot';
+    }
+    return 'green-dot';
+
+  }
+
 
   createMarkerListener(marker, station) {
     marker.addListener('click', () => {
       this.station = station;
-      const reserver = document.querySelector(".reserver");
-      const info = document.querySelector(".informations");
-      const form = document.querySelector(".formulaire");
-      reserver.style.display = "block";
-      info.style.display = "block";
-	  form.style.display = "block";	
-		
-      info.innerHTML = `
-          <p>Adresse : <span>${station.address}</span><p>
-          <p>Nb de places : <span>${station.available_bike_stands}</span><p>
-          <p>Nb de places disponibles: <span>${station.available_bikes}</span><p>
-          <p>État de la station: <span>${this.translateStatus(station.status)}</span></p>
-        `;
-			/*	affichage du texte + canvas + bton 
-	
-const detailReservation = document.querySelector("#reserver-action");
-const canvas = document.querySelector(".canvas");
-
-if (status === "OUVERTE"){
-	canvas.style.display ="block";
-	detailReservation.innerHTML=
-		`<p>Pour confirmer la réservation de votre vélo, apposez votre signature dans le champ ci-dessous, puis validez.</p>`;
-	
-}else (status === "CLOSE"){
-	canvas.style.display ="none";
-	info.style.display ="none";
-	
-}
-
-if (station.available_bike_stands > 0 ){
-	buttonResever.style.display = "block";
-	}
-	else (station.available_bike_stands === 0 ){
-	buttonResever.style.display = "none";
-    };
-*/
-	});
+      this.showReservationForm();
+    });
   }
+
   translateStatus(status) {
     if (status === 'OPEN') {
       return 'OUVERTE';
     }
     return 'FERMEE';
+  }
+
+  showReservationForm() {
+    const reserver = document.querySelector(".reserver");
+    const info = document.querySelector(".informations");
+    const form = document.querySelector(".formulaire");
+    const detailReservation = document.querySelector("#reserver-action");
+    reserver.style.display = "block";
+    info.style.display = "block";
+    form.style.display = "block";
+
+    info.innerHTML = `
+          <p>Adresse : <span>${this.station.address}</span><p>
+          <p>Nb de places : <span>${this.station.available_bike_stands}</span><p>
+          <p>Nb de places disponibles: <span>${this.station.available_bikes}</span><p>
+          <p>État de la station: <span>${this.translateStatus(this.station.status)}</span></p>
+        `;
+    detailReservation.style.display = 'none';
+    if (this.station.status === "OPEN" && this.station.available_bikes > 0) {
+      detailReservation.style.display = 'block';
+    }
+
   }
 }

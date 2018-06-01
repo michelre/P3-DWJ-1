@@ -50,9 +50,11 @@
       <h3>détails de la station</h3>
       <div class="informations"></div>
 
-      <div id="reserver-action"> 
-        <canvas class="canvas"></canvas>
-        <div class="bouton_reservation">
+      <div id="reserver-action">
+        <p>Pour confirmer la réservation de votre vélo, apposez votre signature dans le champ ci-dessous, puis validez.</p>
+        <canvas id="canvas"></canvas>
+        <div class="reservation-actions">
+          <button id="clear-canvas">Effacer</button>
           <button id="book-btn">Réserver</button>
         </div>
       </div>
@@ -78,9 +80,11 @@
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA28hjo-ajXVWoNUqqseMEtQ5I88mAWm3c&callback=initMap"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
 <script type="application/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
 <script type="application/javascript" src="js/slider.js"></script>
 <script type="application/javascript" src="js/reservation-status.js"></script>
+<script type="application/javascript" src="js/canvas.js"></script>
 <script type="application/javascript" src="js/google-map.js"></script>
 <script type="application/javascript" src="js/index.js"></script>
 
