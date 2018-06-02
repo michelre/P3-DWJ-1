@@ -18,7 +18,7 @@ nextButton.addEventListener('click', function () {
 })
 
 
-//fonctions
+//FONCTION DES DEUX ICONS POUR LE SLIDERS
 function previous() {
   if (index === 0) {
     marginLeft = -(sizeSlider * lastSlide);
@@ -43,10 +43,8 @@ function next() {
   $('.sliders').css('marginLeft', marginLeft);
 }
 
-//chainage des images
 
-
-// création des touches claviers + alerte
+// TOUCHES CLAVIERS POUR LE SLIDER 
 
 document.addEventListener("keydown", function (e) {
 

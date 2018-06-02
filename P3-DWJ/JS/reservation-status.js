@@ -1,12 +1,13 @@
 class ReservationStatus {
 
-    constructor(station) {
+    constructor(station, restTime) {
         this.station = station;
+        this.restTime = restTime || 1200000;//ON DIS QUE THIS.RESTIME ET SOIS EGALE A RESTIME OU 1200000
         this.displayStationInfo();
     }
 
 
-    displayStationInfo() {
+    displayStationInfo() {//FONCTION POUR MONTRER OU PAS LES INFORMATIONS DE LA STATION
         if (!this.station) {
             $('.reservation-status').hide();
         } else {
@@ -14,30 +15,28 @@ class ReservationStatus {
         }
         $('#confirm-address').text(this.station.address);
 
-        let restTime = 1200000;
-        const timer = setInterval(() => {
+        let restTime = this.restTime;
+        this.timer = setInterval(() => {//FONCTION POUR LE DECOMPTE DE 20MIN
             restTime -= 1000;
             this.displayRestTime(restTime);
+            this.updateTimeStorage(restTime);
             if (restTime === 0) {
                 clearInterval(timer);
             }
         }, 1000);
     }
 
-    displayRestTime(restTime) {
-        const formatedRestTime = moment(restTime).format('mm:ss')
+    displayRestTime(restTime) {//UTILISATION D'UNE LIBRAIRIE POUR CHANGER LE FORMAT D'AFFICHAGE DU TPS RESTANT
+        const formatedRestTime = moment(restTime).format('mm:ss');
         $('#rest-time').text(formatedRestTime);
     }
 
-    //session Storage
-
-    sessionStorage.setItem(station, this.station.address);
-    sessionStorage.setItem(restTime, $('#rest-time'));
-
-    if (this.station.address && & $('#rest-time') === null) {
-        sessionStorage.removeItem(this.station.address && & $('#rest-time'));
+    updateTimeStorage(restTime){//MIS EN SESSIONS STORAGE DU TPS RESTANTS
+      sessionStorage.setItem('restTime', restTime);
     }
-    return this.station.address = sessionStorage.getItem(this.station.address),
-        $('#rest-time') = sessionStorage.getItem($('#rest-time'));
+
+  stopExistingTimer(){//FONCTION POUR SUPPRIMER LE TIMER A 0 OU ALORS LORS D'UNE SELECTION D'UNE AUTRE STATION
+      clearInterval(this.timer);
+    }
 
 }

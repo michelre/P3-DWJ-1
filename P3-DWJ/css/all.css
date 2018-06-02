@@ -28,6 +28,7 @@ section
 
 .conteneur_sliders
 {
+
 	margin: auto;
 	position: relative;
 	-webkit-box-pack: center;
@@ -195,3 +196,90 @@ button
 	margin-right: 4px;
 }
 
+/********* MEDIA QUERY ******************/
+
+@media screen and (max-device-width: 320px) {
+	.header{
+		max-width:100%;
+	}
+	.conteneur_sliders{
+		width:320px;
+		height: auto;
+	}
+	.slider_image{
+		width:32%;
+	}
+	.next, .previous
+	{
+	top: 175px;
+}
+
+.next
+{
+	right: 10%;
+}
+
+.previous
+{
+	left: 10%;
+}
+.conteneur_carte_formulaire
+{
+	width: 95%;
+	}
+	.reserver
+{
+	width: 250px;
+}
+}
+@media screen and (min-device-width: 321px) and (max-device-width:375px) {
+	.slider_image{
+		width:37%;
+	}
+		.conteneur_sliders{
+		width:auto;
+		height: auto;
+	}
+		.next, .previous
+	{
+	top: 220px;
+}
+	.next
+{
+	right: 10%;
+}
+
+.previous
+{
+	left: 10%;
+}
+	.reserver {
+    width: 260px;
+}
+}
+@media screen and (min-device-width: 376px) and (max-device-width:425px) {
+		.slider_image{
+		width:42%;
+	}
+		.conteneur_sliders{
+		width:auto;
+		height: auto;
+	}
+		.next, .previous
+	{
+	top: 220px;
+}
+	.next
+{
+	right: 10%;
+}
+
+.previous
+{
+	left: 10%;
+}
+	.reserver {
+    width: 295px;
+}
+	}
+	
