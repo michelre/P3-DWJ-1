@@ -1,285 +1,273 @@
-
 /* DEBUT DU CSS */
 
 /************   PARTI ******************/
 
-
-html, body
-{
-	margin: 0;
-	min-width: 100%;
-	background: beige;
+html, body {
+    margin: 0;
+    min-width: 100%;
+    background: beige;
 }
 
-.titre
-{
-	text-align: center;
+.titre {
+    text-align: center;
 }
 
-section
-{
-	margin: auto;
+section {
+    margin: auto;
 }
-
 
 /*******************  FIN PARTI *******************************/
 
 /********************* SLIDERS ************************/
 
-.conteneur_sliders
-{
+.conteneur_sliders {
 
-	margin: auto;
-	position: relative;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	width: 1028px;
-	height: 600px;
-	overflow: hidden;
+    margin: auto;
+    position: relative;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 80%;
+    max-height: 500px;
+    overflow: hidden;
 }
 
-.slider_image
-{
-	width: 100%;
+.slider_image {
+    width: 100%;
 }
 
-.sliders li
-{
-	width: 1028px;
+.sliders {
+    max-height: 500px;
 }
 
-.sliders
-{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	list-style: none;
-	margin:0;
-	padding: 0;
-	width: 9999px;
+.sliders li {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sliders li img {
+    width: 100%;
+}
+
+.sliders {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /********************* BOUTON SLIDERS  ****************************/
-.next, .previous
-{
-	position: absolute;
-	top: 500px;
-	z-index: 2;
-	padding: 15px;
-	border-radius: 45%;
-	background-color: inherit;
-	cursor: pointer;
+.next, .previous {
+    position: absolute;
+    bottom: 20%;
+    z-index: 2;
+    padding: 15px;
+    border-radius: 45%;
+    background-color: inherit;
+    cursor: pointer;
 }
 
-.next
-{
-	right: 25%;
+.next {
+    right: 25%;
 }
 
-.previous
-{
-	left: 25%;
+.previous {
+    left: 25%;
 }
 
-.next:hover, .previous:hover
-{
-	background-color: rgba(255,255,255,0.4);
+.next:hover, .previous:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 /********************* FIN SLIDER + BOUTON  **********************/
 
-
 /************************* CARTE  *******************************/
-.conteneur_carte_formulaire
-{
-	width: 75%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-ms-flex-pack: distribute;
-	justify-content: space-around;
+.conteneur_carte_formulaire {
+    width: 75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 
-.conteneur_carte
-{
-	margin-top: 10px;
-	width:600px;
-	height: 520px;
-	border : 1px solid black ;
-	overflow: hidden;
-	cursor: pointer;
+.conteneur_carte {
+    margin-top: 10px;
+    width: 600px;
+    height: 520px;
+    border: 1px solid black;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 /************************** FIN CSS CARTE *****************************/
 
 /************************ DEBUT FORMULAIRE RESERVATION ****************/
 
-.formulaire
-{
-	display: none;
-}
-.formulaire h3
-{
-	text-align: center;
-	text-transform: uppercase;
+.formulaire {
+    display: none;
 }
 
-.bouton_reservation, .bouton_confirmation
-{
-	position:absolute;
-	bottom:15%;
-	left: 43%;
+.formulaire h3 {
+    text-align: center;
+    text-transform: uppercase;
 }
 
-button
-{
-	padding: 10px;
+.bouton_reservation, .bouton_confirmation {
+    position: absolute;
+    bottom: 15%;
+    left: 43%;
 }
 
-#canvas
-{
-	width: 250px;
-	max-width: 95%;
-	height: 150px;
-	border:1px solid black;
-	background-color:burlywood;
-	margin: auto;
-	display: block;
-	margin-bottom: 10px;
+button {
+    padding: 10px;
 }
 
-.reserver
-{
-	position: relative;
-	width: 300px;
-	height: 500px;
-	border: 1px solid black;
-	margin-top: 10px;
-	padding: 10px;
+#canvas {
+    width: 250px;
+    max-width: 95%;
+    height: 150px;
+    border: 1px solid black;
+    background-color: burlywood;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.confirmation
-{
-	position: relative;
-	width: 300px;
-	height: 500px;
-	border: 1px solid black;
-	margin-top: 10px;
+.reserver {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
 }
 
-.reservation-status
-{
-	display: none;
-	border: 1px solid black;
-	margin-top: 10px;
-	width: 75%;
-	padding: 10px;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+.confirmation {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    margin-top: 10px;
 }
 
-.reservation-actions
-{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
+.reservation-status {
+    display: none;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 75%;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.reservation-actions > button:first-child
-{
-	margin-right: 4px;
+.reservation-actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.reservation-actions > button:first-child {
+    margin-right: 4px;
 }
 
 /********* MEDIA QUERY ******************/
 
 @media screen and (max-device-width: 320px) {
-	.header{
-		max-width:100%;
-	}
-	.conteneur_sliders{
-		width:320px;
-		height: auto;
-	}
-	.slider_image{
-		width:32%;
-	}
-	.next, .previous
-	{
-	top: 175px;
+    .header {
+        max-width: 100%;
+    }
+
+    .conteneur_sliders {
+        width: 320px;
+        height: auto;
+    }
+
+    .slider_image {
+        width: 32%;
+    }
+
+    .next, .previous {
+        top: 175px;
+    }
+
+    .next {
+        right: 10%;
+    }
+
+    .previous {
+        left: 10%;
+    }
+
+    .conteneur_carte_formulaire {
+        width: 95%;
+    }
+
+    .reserver {
+        width: 250px;
+    }
 }
 
-.next
-{
-	right: 10%;
+@media screen and (min-device-width: 321px) and (max-device-width: 375px) {
+    .slider_image {
+        width: 37%;
+    }
+
+    .conteneur_sliders {
+        width: auto;
+        height: auto;
+    }
+
+    .next, .previous {
+        top: 220px;
+    }
+
+    .next {
+        right: 10%;
+    }
+
+    .previous {
+        left: 10%;
+    }
+
+    .reserver {
+        width: 260px;
+    }
 }
 
-.previous
-{
-	left: 10%;
-}
-.conteneur_carte_formulaire
-{
-	width: 95%;
-	}
-	.reserver
-{
-	width: 250px;
-}
-}
-@media screen and (min-device-width: 321px) and (max-device-width:375px) {
-	.slider_image{
-		width:37%;
-	}
-		.conteneur_sliders{
-		width:auto;
-		height: auto;
-	}
-		.next, .previous
-	{
-	top: 220px;
-}
-	.next
-{
-	right: 10%;
-}
+@media screen and (min-device-width: 376px) and (max-device-width: 425px) {
+    .slider_image {
+        width: 42%;
+    }
 
-.previous
-{
-	left: 10%;
-}
-	.reserver {
-    width: 260px;
-}
-}
-@media screen and (min-device-width: 376px) and (max-device-width:425px) {
-		.slider_image{
-		width:42%;
-	}
-		.conteneur_sliders{
-		width:auto;
-		height: auto;
-	}
-		.next, .previous
-	{
-	top: 220px;
-}
-	.next
-{
-	right: 10%;
-}
+    .conteneur_sliders {
+        width: auto;
+        height: auto;
+    }
 
-.previous
-{
-	left: 10%;
+    .next, .previous {
+        top: 220px;
+    }
+
+    .next {
+        right: 10%;
+    }
+
+    .previous {
+        left: 10%;
+    }
+
+    .reserver {
+        width: 295px;
+    }
 }
-	.reserver {
-    width: 295px;
-}
-	}
 
